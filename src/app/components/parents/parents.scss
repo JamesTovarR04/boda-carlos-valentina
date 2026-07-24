@@ -4,8 +4,8 @@
   .section-subtitle {
     font-family: "Lora", Sans-serif;
     font-size: 1.6rem;
-    color: var(--dorado-claro);
-    margin-bottom: 1.2rem;
+    color: var(--dorado);
+    margin-bottom: 2rem;
     font-weight: normal;
     span {
       font-size: 1.3rem;
@@ -22,13 +22,15 @@
   }
   .parents-role {
     font-size: 1.3rem;
-    color: var(--dorado-claro);
+    color: var(--dorado);
     letter-spacing: 2px;
+    font-family: "Lora", Sans-serif;
   }
   .parents-names {
     font-size: 1.2rem;
     color: var(--azul-oscuro);
     margin-top: 0.2rem;
+    font-family: "Lora", Sans-serif;
   }
   .parents-sep {
     width: 1px;

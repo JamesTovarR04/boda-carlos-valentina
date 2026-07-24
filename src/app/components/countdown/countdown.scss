@@ -1,13 +1,23 @@
+.container-countdown {
+  padding: 1rem;
+  background-image: url("/assets/images/Flor-azul-con-dorado-Cuenta-Regresiva.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 89vw auto;
+  margin-bottom: 3rem;
+}
+
 .sec-countdown {
-  background: linear-gradient(135deg, var(--azul-oscuro), var(--azul-medio));
-  border-radius: 16px;
-  margin: 0 1rem;
-  padding: 1.4rem 1rem;
+  background-image: linear-gradient(138deg, #ffffff 2%, #e7e7e7 100%);
+  background-color: transparent;
+  border-radius: 50px;
+  margin: 1.4rem 1rem 1rem 1rem;
+  padding: 1rem;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
 
   .countdown-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: .5rem;
     text-align: center;
   }
   .countdown-item {
@@ -16,15 +26,16 @@
     align-items: center;
   }
   .count-num {
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 700;
-    color: var(--dorado-claro);
+    color: var(--dorado);
     line-height: 1;
   }
   .count-label {
-    font-size: .72rem;
-    color: rgba(255,255,255,.8);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--azul-oscuro);
     letter-spacing: 1px;
-    margin-top: .2rem;
+    margin-top: 0.2rem;
   }
 }

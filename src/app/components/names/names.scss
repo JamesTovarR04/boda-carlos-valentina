@@ -4,26 +4,45 @@
 
   .names-title {
     font-size: 4em;
-    color: var(--dorado-claro);
+    color: var(--dorado);
     line-height: 1.1;
     margin: 0.5rem 0 0.3rem;
     font-weight: normal;
   }
   .wedding-date {
-    font-size: 1rem;
+    font-family: "Lora", Sans-serif;
+    font-weight: 500;
+    font-size: 1.3rem;
     color: var(--azul-oscuro);
     letter-spacing: 3px;
   }
   .frase-final {
     font-style: italic;
-    font-size: 0.9rem;
-    color: var(--azul-medio);
+    color: var(--azul-oscuro);
     margin-top: 0.8rem;
   }
   h2 {
     color: var(--dorado-claro);
     font-weight: normal;
     font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.info-box {
+  font-family: "Cormorant", serif;
+
+  h2 {
+    font-size: 2.8em;
+    font-weight: 600;
+    color: var(--dorado);
+  }
+
+  p {
+    font-family: "Lora", serif;
+    font-size: 1.2rem;
+    color: var(--azul-oscuro);
+    line-height: 1.5;
     margin-bottom: 1rem;
   }
 }
