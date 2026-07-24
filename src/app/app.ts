@@ -54,6 +54,8 @@ export class App implements OnInit, OnDestroy {
       'https://boreh.pro/wp-content/uploads/2025/06/Fonseca-Que-Suerte-Tenerte-Audio.mp3'
     );
     this.audio.loop = true;
+    // Bloquear scroll hasta que se abra el overlay
+    document.body.style.overflow = 'hidden';
   }
 
   ngOnDestroy(): void {
@@ -64,13 +66,12 @@ export class App implements OnInit, OnDestroy {
     this.overlayOpen.set(true);
     this.audio?.play().catch(() => {});
     this.musicActive.set(true);
-    // El overlay hace fade-out con transition: opacity .5s delay .9s
-    // Esperamos 1.5s para eliminar el DOM una vez la animación terminó
-    // overlay: fade delay 1.6s + duración 0.6s = 2.2s total
     setTimeout(() => {
       this.overlayHidden.set(true);
       this.showMusicBtn.set(true);
-    }, 2300);
+      // Restaurar scroll al terminar la animación
+      document.body.style.overflow = '';
+    }, 1500);
   }
 
   toggleMusic(): void {
