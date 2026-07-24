@@ -1,0 +1,39 @@
+.sec-parents {
+  text-align: center;
+
+  .section-subtitle {
+    font-family: "Lora", Sans-serif;
+    font-size: 1.6rem;
+    color: var(--dorado-claro);
+    margin-bottom: 1.2rem;
+    font-weight: normal;
+    span {
+      font-size: 1.3rem;
+    }
+  }
+  .parents-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .parents-col {
+    text-align: center;
+  }
+  .parents-role {
+    font-size: 1.3rem;
+    color: var(--dorado-claro);
+    letter-spacing: 2px;
+  }
+  .parents-names {
+    font-size: 1.2rem;
+    color: var(--azul-oscuro);
+    margin-top: 0.2rem;
+  }
+  .parents-sep {
+    width: 1px;
+    height: 48px;
+    background: var(--dorado);
+    opacity: 0.5;
+  }
+}

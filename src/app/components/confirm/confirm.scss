@@ -1,0 +1,11 @@
+.sec-confirm {
+  text-align: center;
+
+  .confirm-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.2rem;
+  }
+}

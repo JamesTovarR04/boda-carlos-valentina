@@ -1,0 +1,20 @@
+.sec-itinerary { }
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: .8rem 0;
+    border-bottom: 1px solid rgba(31,75,133,.12);
+    &:last-child { border-bottom: none; }
+  }
+  .tl-icon { font-size: 1.4rem; min-width: 36px; text-align: center; }
+  .tl-title { font-weight: 600; color: var(--azul-oscuro); font-size: .95rem; }
+  .tl-desc  { font-size: .82rem; color: #666; margin: .1rem 0; }
+  .tl-time  { font-size: .78rem; color: var(--dorado); font-weight: 700; }
+}

@@ -1,0 +1,23 @@
+.sec-guest {
+  .guest-card {
+    background: linear-gradient(135deg, var(--azul-oscuro), var(--azul-medio));
+    color: #fff;
+    border-radius: 16px;
+    padding: 1.4rem 1.5rem;
+    text-align: center;
+  }
+  .guest-label {
+    font-size: .78rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: .8;
+  }
+  .guest-name {
+    font-size: 2rem;
+    margin: .3rem 0;
+  }
+  .guest-spots {
+    font-size: .88rem;
+    opacity: .9;
+  }
+}

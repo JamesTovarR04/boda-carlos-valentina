@@ -1,0 +1,104 @@
+<div class="app-wrapper">
+  <!-- ── UI Global ──────────────────────────────────────── -->
+  <app-intro-overlay
+    [isOpen]="overlayOpen()"
+    [isHidden]="overlayHidden()"
+    (opened)="openDoors()"
+  />
+
+  <app-music-btn
+    [active]="musicActive()"
+    [visible]="showMusicBtn()"
+    (toggled)="toggleMusic()"
+  />
+
+  <!-- ── Contenido principal ────────────────────────────── -->
+  <main class="invitation-wrapper">
+    <!-- Desktop: aviso solo-mobile -->
+    <div class="desktop-notice">
+      <p>
+        Esta invitación ha sido optimizada para dispositivos móviles.<br />
+        Ábrela desde tu celular o activa el modo móvil en tu navegador:<br />
+        <strong>(clic derecho → 'Inspeccionar' → Ctrl + Shift + M)</strong>
+      </p>
+      <img src="assets/images/Movil.svg" alt="Abrir en móvil" width="80" />
+    </div>
+
+    <!-- 01 · Foto hero -->
+    <app-hero />
+
+    <!-- 02 · Nombres y mensaje -->
+    <app-names />
+
+    <!-- 03 · Padres -->
+    <app-parents />
+
+    <!-- 04 · Tarjeta del invitado -->
+    <app-guest-card guestName="Flia. Rodríguez Méndez" [spots]="4" />
+
+    <!-- 05 · Countdown -->
+    <app-countdown />
+
+    <!-- ── Divisor + Foto ── -->
+    <app-mountain-divider />
+    <app-photo-section
+      src="assets/images/Ph-4-Mark-1.jpg"
+      alt="Foto de la pareja"
+    />
+    <app-mountain-divider />
+
+    <!-- 06 · Ceremonia -->
+    <app-ceremony />
+
+    <!-- Foto -->
+    <app-photo-section
+      src="assets/images/Ph-5-Mark-1.jpg"
+      alt="Foto ceremonia"
+    />
+
+    <!-- 07 · Recepción -->
+    <app-reception />
+
+    <!-- ── Divisor + Foto ── -->
+    <app-mountain-divider />
+    <app-photo-section
+      src="assets/images/Ph-1-Mark-1.jpg"
+      alt="Foto de los novios"
+    />
+    <app-mountain-divider />
+
+    <!-- 08 · Código de vestuario -->
+    <app-dresscode />
+
+    <!-- 09 · Itinerario -->
+    <app-itinerary />
+
+    <!-- 10 · Notas -->
+    <app-notes />
+
+    <!-- ── Divisor + Foto ── -->
+    <app-mountain-divider />
+    <app-photo-section
+      src="assets/images/Ph-3-Mark-1-scaled.jpg"
+      alt="Foto novios"
+    />
+    <app-mountain-divider />
+
+    <!-- 11 · Regalos -->
+    <app-gifts />
+
+    <!-- 12 · Recuerdos / Álbum -->
+    <app-memories />
+
+    <!-- 13 · Agéndate -->
+    <app-calendar />
+
+    <!-- 14 · Confirmar asistencia -->
+    <app-confirm />
+
+    <!-- Footer -->
+    <footer>
+      <p>Felipe &amp; Andrea · 26.12.2026</p>
+    </footer>
+  </main>
+</div>

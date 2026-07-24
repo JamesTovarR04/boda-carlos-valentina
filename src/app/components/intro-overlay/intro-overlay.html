@@ -1,0 +1,7 @@
+@if (!isHidden) {
+  <div class="intro-overlay" [class.abierto]="isOpen">
+    <div class="papel-top"    [class.abierto]="isOpen"></div>
+    <div class="papel-bottom" [class.abierto]="isOpen"></div>
+    <div class="abrir-btn"    [class.abierto]="isOpen" (click)="abrir()">ABRIR</div>
+  </div>
+}

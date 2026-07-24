@@ -1,0 +1,17 @@
+.music-btn {
+  position: fixed;
+  bottom: 20px; right: 20px;
+  z-index: 1000;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,.45);
+  backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+
+  &:hover  { background: rgba(0,0,0,.6); transform: scale(1.07); }
+  &.active svg { transform: rotate(18deg); }
+  svg { transition: transform .3s; }
+}

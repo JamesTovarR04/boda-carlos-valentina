@@ -1,0 +1,12 @@
+@if (visible) {
+  <button
+    class="music-btn"
+    [class.active]="active"
+    (click)="toggled.emit()"
+    aria-label="Música"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24" width="24" height="24">
+      <path d="M9 17.5c-1.38 0-2.5-1.12-2.5-2.5S7.62 12.5 9 12.5s2.5 1.12 2.5 2.5v-9h7v2h-5v7c0 1.38-1.12 2.5-2.5 2.5z"/>
+    </svg>
+  </button>
+}

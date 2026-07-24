@@ -1,0 +1,136 @@
+/* =====================================================
+   ESTILOS GLOBALES – Invitación Zafiro
+   ===================================================== */
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Variables de color */
+:root {
+  --azul-oscuro: #1a243f;
+  --azul-medio: #276296;
+  --azul-claro: #4a7ab5;
+  --dorado: #b9965a;
+  --dorado-claro: #e1c896;
+  --crema: #fdf8f0;
+  --blanco: #ffffff;
+  --texto: #2c2c2c;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Lora", Georgia, serif;
+  color: var(--texto);
+  overflow-x: hidden;
+}
+
+/* Fuente script para títulos */
+.font-script {
+  font-family: "Imperial Script", cursive;
+}
+
+/* Sección base */
+section {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  position: relative;
+}
+
+/* Divisor decorativo */
+.divider {
+  text-align: center;
+  color: var(--dorado);
+  font-size: 1.4rem;
+  letter-spacing: 6px;
+  margin: 1rem 0;
+  opacity: 0.7;
+}
+
+/* Botón dorado */
+.btn-gold {
+  display: inline-block;
+  background: linear-gradient(
+    150deg,
+    var(--dorado-claro) 2%,
+    var(--dorado) 100%
+  );
+  color: var(--blanco);
+  border: none;
+  border-radius: 30px;
+  padding: 0.7rem 1.8rem;
+  font-family: "Lora", serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: filter 0.2s;
+}
+.btn-gold:hover {
+  filter: brightness(1.1);
+}
+
+/* Botón azul */
+.btn-blue {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--azul-medio);
+  color: var(--blanco);
+  border: none;
+  border-radius: 30px;
+  padding: 0.7rem 1.6rem;
+  font-family: "Lora", serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+  width: 100%;
+  max-width: 260px;
+  justify-content: center;
+}
+.btn-blue:hover {
+  background: var(--azul-claro);
+}
+
+/* Flor decorativa */
+.flor-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  pointer-events: none;
+  margin-bottom: -1rem;
+}
+.flor-wrap img {
+  width: 90px;
+  opacity: 0.85;
+}
+.flor-wrap .flor-right {
+  transform: scaleX(-1);
+}
+
+/* Mountain divider SVG */
+.mountain-svg {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+.mountain-svg svg {
+  display: block;
+  width: 100%;
+}
+
+/* Scrollbar invisible */
+::-webkit-scrollbar {
+  width: 0;
+}
