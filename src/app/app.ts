@@ -29,6 +29,7 @@ import { Gifts } from './components/gifts/gifts';
 import { Memories } from './components/memories/memories';
 import { Calendar } from './components/calendar/calendar';
 import { Confirm } from './components/confirm/confirm';
+import { Video } from './components/video/video';
 
 @Component({
   selector: 'app-root',
@@ -54,6 +55,7 @@ import { Confirm } from './components/confirm/confirm';
     Memories,
     Calendar,
     Confirm,
+    Video,
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',

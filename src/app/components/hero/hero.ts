@@ -31,8 +31,8 @@ import { Component } from '@angular/core';
         </svg>
       </div>
       <img
-        src="assets/images/Ph-6-Mark-1.jpg"
-        alt="Felipe y Andrea"
+        src="assets/images/foto_2.jpeg"
+        alt="Carlos y Valentina"
         class="hero-photo"
         loading="eager"
       />

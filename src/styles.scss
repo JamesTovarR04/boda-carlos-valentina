@@ -62,8 +62,8 @@ section {
   display: inline-block;
   background: linear-gradient(
     150deg,
-    var(--dorado-claro) 2%,
-    var(--dorado) 100%
+    var(--azul-oscuro) 2%,
+    var(--azul-medio) 100%
   );
   color: var(--blanco);
   border: none;
@@ -84,7 +84,7 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--azul-medio);
+  background: var(--azul-oscuro);
   color: var(--blanco);
   border: none;
   border-radius: 30px;
