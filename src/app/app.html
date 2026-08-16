@@ -12,17 +12,18 @@
     (toggled)="toggleMusic()"
   />
 
+  <!-- Desktop: aviso solo-mobile -->
+  <div class="desktop-notice">
+    <p>
+      Esta invitación ha sido optimizada para dispositivos móviles.<br />
+      Ábrela desde tu celular o activa el modo móvil en tu navegador:<br />
+      <strong>(clic derecho → 'Inspeccionar' → Ctrl + Shift + M)</strong>
+    </p>
+    <img src="assets/images/Movil.svg" alt="Abrir en móvil" width="80" />
+  </div>
+
   <!-- ── Contenido principal ────────────────────────────── -->
   <main class="invitation-wrapper">
-    <!-- Desktop: aviso solo-mobile -->
-    <div class="desktop-notice">
-      <p>
-        Esta invitación ha sido optimizada para dispositivos móviles.<br />
-        Ábrela desde tu celular o activa el modo móvil en tu navegador:<br />
-        <strong>(clic derecho → 'Inspeccionar' → Ctrl + Shift + M)</strong>
-      </p>
-      <img src="assets/images/Movil.svg" alt="Abrir en móvil" width="80" />
-    </div>
 
     <!-- 01 · Foto hero -->
     <app-hero />
