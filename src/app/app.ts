@@ -75,6 +75,9 @@ export class App implements OnInit, OnDestroy {
   canciones = ['amor_bueno', 'hasta_viejitos', 'tienes_magia'];
 
   ngOnInit(): void {
+    // Volver al inicio al recargar la página
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
     const randomIndex = Math.floor(Math.random() * this.canciones.length);
     const selectedSong = this.canciones[randomIndex];
     this.audio = new Audio(`/assets/musica/${selectedSong}.mp3`);
