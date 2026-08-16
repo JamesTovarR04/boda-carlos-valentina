@@ -80,7 +80,7 @@ export class App implements OnInit, OnDestroy {
 
     const randomIndex = Math.floor(Math.random() * this.canciones.length);
     const selectedSong = this.canciones[randomIndex];
-    this.audio = new Audio(`/assets/musica/${selectedSong}.mp3`);
+    this.audio = new Audio(`assets/musica/${selectedSong}.mp3`);
     this.audio.loop = true;
     // Bloquear scroll hasta que se abra el overlay
     document.body.style.overflow = 'hidden';
