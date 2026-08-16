@@ -30,12 +30,12 @@ import { Memories } from './components/memories/memories';
 import { Calendar } from './components/calendar/calendar';
 import { Confirm } from './components/confirm/confirm';
 import { Video } from './components/video/video';
+import { Corazon } from './components/animaciones/corazon/corazon';
 
 @Component({
   selector: 'app-root',
   imports: [
     // shared
-    MountainDivider,
     PhotoSection,
     // ui
     IntroOverlay,
@@ -56,6 +56,7 @@ import { Video } from './components/video/video';
     Calendar,
     Confirm,
     Video,
+    Corazon,
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',

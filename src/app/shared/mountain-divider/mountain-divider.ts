@@ -29,6 +29,7 @@ import { Component } from '@angular/core';
   styles: [
     `
       .mountain-divider {
+        max-width: 100vw;
         overflow: hidden;
         line-height: 0;
         margin: -1px 0;

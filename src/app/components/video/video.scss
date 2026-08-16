@@ -2,3 +2,18 @@
   width: 100%;
   max-width: 480px;
 }
+
+.sec-video {
+  padding: 0;
+  position: relative;
+}
+
+.mountain-top {
+  position: absolute;
+}
+
+.mountain-buttom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

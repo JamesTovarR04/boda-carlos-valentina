@@ -1,39 +1,45 @@
 <section class="sec-memories">
-  <div class="flor-wrap">
+  <div class="flor-wrap-2">
+    <img src="assets/images/flor-1.png" alt="" class="flor-left" />
     <img
-      src="assets/images/Flor-azul-con-dorado-1-e1753722077798.webp"
-      alt=""
-      class="flor-left"
-      style="transform: scaleX(-1)"
-    />
-    <img
-      src="assets/images/Flor-azul-con-dorado-2.webp"
+      src="assets/images/flor-2.png"
       alt=""
       class="flor-right"
+      style="transform: scaleX(-1)"
     />
   </div>
-  <div class="info-box">
-    <h2>Recuerdos</h2>
-    <h3>Compartidos</h3>
-    <p>
-      Escanea este QR o haz clic en el botón para subir todas las fotos a un
-      mismo álbum.
-    </p>
-    <img
-      src="assets/images/QR-FALSO-300x300.jpg"
-      alt="QR álbum de fotos"
-      class="qr-img"
-      width="135"
-      height="135"
-      loading="lazy"
-    />
-    <a
-      href="https://photos.google.com/u/0/albums?hl=es"
-      target="_blank"
-      rel="noopener"
-      class="btn-gold"
-    >
-      Álbum de fotos
-    </a>
-  </div>
+  <app-card title="Recuerdos" subtitle="Compartidos">
+    <div class="info-box">
+      <p class="parrafo">
+        Escanea este QR o haz clic en el botón para subir todas las fotos a un
+        mismo álbum.
+      </p>
+      <img
+        src="assets/images/QR-FALSO-300x300.jpg"
+        alt="QR álbum de fotos"
+        class="qr-img"
+        width="135"
+        height="135"
+        loading="lazy"
+      />
+      <a
+        href="https://photos.google.com/u/0/albums?hl=es"
+        target="_blank"
+        rel="noopener"
+        class="btn-gold"
+      >
+        <svg
+          aria-hidden="true"
+          class="e-font-icon-svg e-fas-camera"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M512 144v288c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48h88l12.3-32.9c7-18.7 24.9-31.1 44.9-31.1h125.5c20 0 37.9 12.4 44.9 31.1L376 96h88c26.5 0 48 21.5 48 48zM376 288c0-66.2-53.8-120-120-120s-120 53.8-120 120 53.8 120 120 120 120-53.8 120-120zm-32 0c0 48.5-39.5 88-88 88s-88-39.5-88-88 39.5-88 88-88 88 39.5 88 88z"
+          ></path>
+        </svg>
+        <span>Subir fotos</span>
+      </a>
+    </div>
+  </app-card>
 </section>

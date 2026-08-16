@@ -1,1 +1,21 @@
-.sec-notes { text-align: center; }
+.sec-notes {
+  text-align: center;
+  padding-bottom: 5rem;
+}
+
+.flor-right {
+  opacity: 0.8;
+}
+
+.icon {
+  display: inline-block;
+  margin-bottom: 2vw;
+  font-size: 3rem;
+  svg {
+    fill: var(--azul-oscuro);
+    width: 1em;
+    height: 1em;
+    position: relative;
+    display: block;
+  }
+}

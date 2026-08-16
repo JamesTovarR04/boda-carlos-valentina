@@ -1,56 +1,61 @@
+<div class="event-icon">
+  <svg
+    viewBox="0 0 80 80"
+    width="80"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M40 8v12M34 14h12"
+      stroke="var(--azul-oscuro)"
+      stroke-width="2.5"
+      stroke-linecap="round"
+    />
+    <path
+      d="M20 70V40l20-14 20 14v30H20z"
+      stroke="var(--azul-oscuro)"
+      stroke-width="2.5"
+      stroke-linejoin="round"
+    />
+    <rect
+      x="33"
+      y="50"
+      width="14"
+      height="20"
+      stroke="var(--azul-oscuro)"
+      stroke-width="2"
+    />
+  </svg>
+</div>
 <section class="sec-event">
-  <div class="flor-wrap">
+  <div class="flor-wrap-2">
+    <img src="assets/images/flor-2.png" class="flor-left" />
     <img
-      src="assets/images/Flor-azul-con-dorado-2.webp"
-      alt=""
-      class="flor-left"
-    />
-    <img
-      src="assets/images/Flor-azul-con-dorado-1-e1753722077798.webp"
-      alt=""
+      src="assets/images/flor-1.png"
       class="flor-right"
+      style="transform: scaleX(-1)"
     />
   </div>
-  <div class="event-icon">
-    <svg
-      viewBox="0 0 80 80"
-      width="80"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M40 8v12M34 14h12"
-        stroke="var(--azul-oscuro)"
-        stroke-width="2.5"
-        stroke-linecap="round"
-      />
-      <path
-        d="M20 70V40l20-14 20 14v30H20z"
-        stroke="var(--azul-oscuro)"
-        stroke-width="2.5"
-        stroke-linejoin="round"
-      />
-      <rect
-        x="33"
-        y="50"
-        width="14"
-        height="20"
-        stroke="var(--azul-oscuro)"
-        stroke-width="2"
-      />
-    </svg>
-  </div>
-  <div class="info-box">
-    <h2>Ceremonia</h2>
-    <h3>Parroquia de San José de Nazareth</h3>
-    <p>Cra. 1 #7-116 Barrio Nazareth, Garzón</p>
-    <p><strong>6:00 p.m.</strong></p>
-    <a
-      href="https://maps.app.goo.gl/pgzPv4nUcpPyMQBS9"
-      target="_blank"
-      rel="noopener"
-      class="btn-gold"
-      >Ver mapa</a
-    >
-  </div>
+  <app-card title="Ceremonia" subtitle="Parroquia de San José de Nazareth">
+    <div class="info-box">
+      <p class="parrafo">Cra. 1 #7-116 Barrio Nazareth, Garzón</p>
+      <p class="parrafo hora"><strong>6:00 p.m.</strong></p>
+      <a
+        href="https://maps.app.goo.gl/pgzPv4nUcpPyMQBS9"
+        target="_blank"
+        rel="noopener"
+        class="btn-gold"
+        ><svg
+          aria-hidden="true"
+          viewBox="0 0 384 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
+          ></path>
+        </svg>
+        <span>Ver mapa</span></a
+      >
+    </div>
+  </app-card>
 </section>

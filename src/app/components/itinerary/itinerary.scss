@@ -1,20 +1,56 @@
-.sec-itinerary { }
+.info-box {
+  text-align: center;
+}
 
 .timeline {
   list-style: none;
   padding: 0;
-  margin: 1rem 0;
+  margin: 1rem auto;
+  width: max-content;
 
   li {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
-    padding: .8rem 0;
-    border-bottom: 1px solid rgba(31,75,133,.12);
-    &:last-child { border-bottom: none; }
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(31, 75, 133, 0.12);
+    &:last-child {
+      border-bottom: none;
+    }
   }
-  .tl-icon { font-size: 1.4rem; min-width: 36px; text-align: center; }
-  .tl-title { font-weight: 600; color: var(--azul-oscuro); font-size: .95rem; }
-  .tl-desc  { font-size: .82rem; color: #666; margin: .1rem 0; }
-  .tl-time  { font-size: .78rem; color: var(--dorado); font-weight: 700; }
+  .tl-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #3e77b9 0%, var(--azul-oscuro) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    position: relative !important;
+    z-index: 2 !important;
+    svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  .tl-title {
+    font-family: "Lora", Sans-serif;
+    color: var(--azul-oscuro);
+    font-size: 1.4rem;
+  }
+  .tl-desc {
+    font-size: 1rem;
+    color: #666;
+    font-family: "Lora", Sans-serif;
+    margin: 0.5rem auto;
+    max-width: 200px;
+  }
+  .tl-time {
+    font-size: 1rem;
+    color: var(--azul-claro);
+    font-weight: 700;
+    font-family: "Lora", Sans-serif;
+  }
 }

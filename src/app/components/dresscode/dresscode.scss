@@ -4,62 +4,42 @@
   .dress-grid {
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    margin: 1rem 0;
+    gap: 4rem;
+    margin: 3rem 0;
   }
   .dress-item {
     img {
-      width: 80px;
+      height: 250px;
       display: block;
       margin: 0 auto 0.5rem;
     }
     .dress-title {
+      text-align: center;
       font-weight: 600;
       font-size: 0.9rem;
       color: var(--azul-oscuro);
     }
-    .dress-sub {
-      font-size: 0.82rem;
-      color: var(--dorado);
-    }
-    .dress-note {
-      font-size: 0.78rem;
-      color: #666;
-    }
   }
   .reserved-colors {
-    background: rgba(31, 75, 133, 0.07);
-    border: 1px solid rgba(31, 75, 133, 0.15);
-    border-radius: 12px;
-    padding: 0.9rem;
-    margin-top: 0.8rem;
-
-    .reserved-label {
-      font-weight: 600;
-      font-size: 0.82rem;
-      color: var(--azul-oscuro);
-    }
-    .reserved-value {
-      font-size: 1rem;
-      color: var(--dorado);
-      font-weight: 700;
-      margin: 0.2rem 0;
+    .subtitle {
+      margin-bottom: 0.5rem;
     }
     .reserved-note {
-      font-size: 0.78rem;
+      font-size: 1.1em;
       color: #666;
+      font-family: "Lora", Sans-serif;
     }
     .color-chips {
       display: flex;
       justify-content: center;
       gap: 0.8rem;
-      margin-top: 0.6rem;
+      margin: 2rem 0;
     }
     .chip {
       display: inline-block;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
+      width: 67px;
+      height: 67px;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
       &--white {
         background: #fff;
         border: 1px solid #ccc;

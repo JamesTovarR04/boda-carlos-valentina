@@ -33,6 +33,8 @@
     <!-- 03 · Padres -->
     <app-parents />
 
+    <app-corazon />
+
     <!-- 04 · Tarjeta del invitado -->
     <app-guest-card guestName="Flia. Rodríguez Méndez" [spots]="4" />
 
@@ -49,18 +51,16 @@
     <app-ceremony />
 
     <!-- Foto -->
-    <app-photo-section src="assets/images/foto_5.jpeg" alt="Foto ceremonia" />
 
     <!-- 07 · Recepción -->
     <app-reception />
 
-    <!-- ── Divisor + Foto ── -->
-    <app-mountain-divider />
+    <!-- ──  Foto ── -->
     <app-photo-section
-      src="assets/images/foto_3.jpeg"
-      alt="Foto de los novios"
+      src="assets/images/foto_5.jpeg"
+      alt="Foto ceremonia"
+      [showFlor]="true"
     />
-    <app-mountain-divider />
 
     <!-- 08 · Código de vestuario -->
     <app-dresscode />
@@ -72,9 +72,7 @@
     <app-notes />
 
     <!-- ── Divisor + Foto ── -->
-    <app-mountain-divider />
     <app-photo-section src="assets/images/foto_4.jpeg" alt="Foto novios" />
-    <app-mountain-divider />
 
     <!-- 11 · Regalos -->
     <app-gifts />
@@ -94,5 +92,11 @@
     <footer>
       <p>Carlos &amp; Valentina · 26.12.2026</p>
     </footer>
+
+    <app-photo-section
+      src="assets/images/foto_3.jpeg"
+      alt="Foto de los novios"
+      [hideBottomDivider]="true"
+    />
   </main>
 </div>
