@@ -21,7 +21,7 @@ export class Regalo {
   animation?: AnimationItem;
 
   options: AnimationOptions = {
-    path: '/assets/animaciones/regalo.json',
+    path: 'assets/animaciones/regalo.json',
   };
 
   animationCreated(animationItem: AnimationItem): void {

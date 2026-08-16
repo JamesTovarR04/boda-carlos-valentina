@@ -21,7 +21,7 @@ export class Corazon {
   animation?: AnimationItem;
 
   options: AnimationOptions = {
-    path: '/assets/animaciones/corazon.json',
+    path: 'assets/animaciones/corazon.json',
   };
 
   animationCreated(animationItem: AnimationItem): void {

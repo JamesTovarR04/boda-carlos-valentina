@@ -21,7 +21,7 @@ export class Iglesia {
   animation?: AnimationItem;
 
   options: AnimationOptions = {
-    path: '/assets/animaciones/iglesia.json',
+    path: 'assets/animaciones/iglesia.json',
   };
 
   animationCreated(animationItem: AnimationItem): void {

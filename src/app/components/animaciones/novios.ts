@@ -21,7 +21,7 @@ export class Novios {
   animation?: AnimationItem;
 
   options: AnimationOptions = {
-    path: '/assets/animaciones/novios.json',
+    path: 'assets/animaciones/novios.json',
   };
 
   animationCreated(animationItem: AnimationItem): void {

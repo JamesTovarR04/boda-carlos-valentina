@@ -21,7 +21,7 @@ export class Camara {
   animation?: AnimationItem;
 
   options: AnimationOptions = {
-    path: '/assets/animaciones/camara.json',
+    path: 'assets/animaciones/camara.json',
   };
 
   animationCreated(animationItem: AnimationItem): void {

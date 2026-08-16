@@ -21,7 +21,7 @@ export class Whatsapp {
   animation?: AnimationItem;
 
   options: AnimationOptions = {
-    path: '/assets/animaciones/whatsapp.json',
+    path: 'assets/animaciones/whatsapp.json',
   };
 
   animationCreated(animationItem: AnimationItem): void {

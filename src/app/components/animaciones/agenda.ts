@@ -21,7 +21,7 @@ export class Agenda {
   animation?: AnimationItem;
 
   options: AnimationOptions = {
-    path: '/assets/animaciones/agenda.json',
+    path: 'assets/animaciones/agenda.json',
   };
 
   animationCreated(animationItem: AnimationItem): void {
