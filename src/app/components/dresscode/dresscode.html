@@ -1,10 +1,10 @@
 <app-novios />
 <section class="sec-dresscode">
-  <div class="info-box">
+  <div scrollAnimate="fade-up" class="info-box">
     <h2 class="title">Código de Vestuario</h2>
     <h3 class="subtitle">Semi-Formal</h3>
   </div>
-  <div class="dress-grid">
+  <div scrollAnimate="zoom-in" [animDelay]="150" class="dress-grid">
     <div class="dress-item">
       <img src="assets/images/dama.webp" alt="Damas" loading="lazy" />
       <p class="dress-title">Damas</p>
@@ -14,7 +14,7 @@
       <p class="dress-title">Caballeros</p>
     </div>
   </div>
-  <div class="reserved-colors">
+  <div scrollAnimate="fade-up" [animDelay]="200" class="reserved-colors">
     <p class="title">Colores Reservados</p>
     <p class="subtitle">Blanco y Azul Oscuro</p>
     <p class="reserved-note">

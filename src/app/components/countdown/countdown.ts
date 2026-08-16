@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy, signal } from '@angular/core';
+import { ScrollAnimate } from '../../shared/scroll-animate';
 
 interface TimeLeft {
   dias: number;
@@ -11,6 +12,7 @@ interface TimeLeft {
   selector: 'app-countdown',
   templateUrl: './countdown.html',
   styleUrl: './countdown.scss',
+  imports: [ScrollAnimate],
 })
 export class Countdown implements OnInit, OnDestroy {
   private readonly weddingDate = new Date(
