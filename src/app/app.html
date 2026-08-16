@@ -27,13 +27,15 @@
     <!-- 01 · Foto hero -->
     <app-hero />
 
-    <!-- 02 · Nombres y mensaje -->
-    <app-names />
+    <app-container-bg>
+      <!-- 02 · Nombres y mensaje -->
+      <app-names />
 
-    <!-- 03 · Padres -->
-    <app-parents />
+      <!-- 03 · Padres -->
+      <app-parents />
 
-    <app-corazon />
+      <app-corazon />
+    </app-container-bg>
 
     <!-- 04 · Tarjeta del invitado -->
     <app-guest-card guestName="Flia. Rodríguez Méndez" [spots]="4" />
@@ -47,13 +49,13 @@
       alt="Foto de la pareja"
     />
 
-    <!-- 06 · Ceremonia -->
-    <app-ceremony />
+    <app-container-bg>
+      <!-- 06 · Ceremonia -->
+      <app-ceremony />
 
-    <!-- Foto -->
-
-    <!-- 07 · Recepción -->
-    <app-reception />
+      <!-- 07 · Recepción -->
+      <app-reception />
+    </app-container-bg>
 
     <!-- ──  Foto ── -->
     <app-photo-section
@@ -62,11 +64,13 @@
       [showFlor]="true"
     />
 
-    <!-- 08 · Código de vestuario -->
-    <app-dresscode />
+    <app-container-bg>
+      <!-- 08 · Código de vestuario -->
+      <app-dresscode />
 
-    <!-- 09 · Itinerario -->
-    <app-itinerary />
+      <!-- 09 · Itinerario -->
+      <app-itinerary />
+    </app-container-bg>
 
     <!-- 10 · Notas -->
     <app-notes />
@@ -74,24 +78,28 @@
     <!-- ── Divisor + Foto ── -->
     <app-photo-section src="assets/images/foto_4.jpeg" alt="Foto novios" />
 
-    <!-- 11 · Regalos -->
-    <app-gifts />
+    <app-container-bg>
+      <!-- 11 · Regalos -->
+      <app-gifts />
 
-    <app-video />
+      <app-video />
 
-    <!-- 12 · Recuerdos / Álbum -->
-    <app-memories />
+      <!-- 12 · Recuerdos / Álbum -->
+      <app-memories />
+    </app-container-bg>
 
-    <!-- 13 · Agéndate -->
-    <app-calendar />
+    <app-container-bg>
+      <!-- 13 · Agéndate -->
+      <app-calendar />
 
-    <!-- 14 · Confirmar asistencia -->
-    <app-confirm />
+      <!-- 14 · Confirmar asistencia -->
+      <app-confirm />
 
-    <!-- Footer -->
-    <footer>
-      <p>Carlos &amp; Valentina · 26.12.2026</p>
-    </footer>
+      <!-- Footer -->
+      <footer>
+        <p>Carlos &amp; Valentina · 26.12.2026</p>
+      </footer>
+    </app-container-bg>
 
     <app-photo-section
       src="assets/images/foto_3.jpeg"

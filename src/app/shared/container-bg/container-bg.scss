@@ -1,0 +1,19 @@
+.container-bg {
+  position: relative;
+  &::before {
+    width: 100vw;
+    height: 100vh;
+    content: "";
+    display: block;
+    background-image: url("/assets/images/fondo.jpg");
+    background-size: contain;
+    background-position: left;
+    background-color: var(--blanco);
+    background-repeat: no-repeat;
+    left: 0;
+    mix-blend-mode: initial;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+  }
+}

@@ -30,7 +30,8 @@ import { Memories } from './components/memories/memories';
 import { Calendar } from './components/calendar/calendar';
 import { Confirm } from './components/confirm/confirm';
 import { Video } from './components/video/video';
-import { Corazon } from './components/animaciones/corazon/corazon';
+import { Corazon } from './components/animaciones/corazon';
+import { ContainerBg } from './shared/container-bg/container-bg';
 
 @Component({
   selector: 'app-root',
@@ -57,6 +58,7 @@ import { Corazon } from './components/animaciones/corazon/corazon';
     Confirm,
     Video,
     Corazon,
+    ContainerBg,
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',

@@ -252,3 +252,11 @@ section {
     transform: translate(0, 0) rotate(0deg) rotateY(180deg);
   }
 }
+
+.animation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
