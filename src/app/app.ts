@@ -32,6 +32,7 @@ import { Confirm } from './components/confirm/confirm';
 import { Video } from './components/video/video';
 import { Corazon } from './components/animaciones/corazon';
 import { ContainerBg } from './shared/container-bg/container-bg';
+import { SupabaseService } from './services/supabase';
 
 @Component({
   selector: 'app-root',
@@ -74,6 +75,8 @@ export class App implements OnInit, OnDestroy {
 
   canciones = ['amor_bueno', 'hasta_viejitos', 'tienes_magia'];
 
+  constructor(private supabase: SupabaseService) {}
+
   ngOnInit(): void {
     // Volver al inicio al recargar la página
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
@@ -84,6 +87,7 @@ export class App implements OnInit, OnDestroy {
     this.audio.loop = true;
     // Bloquear scroll hasta que se abra el overlay
     document.body.style.overflow = 'hidden';
+    this.obtenerInvitados();
   }
 
   ngOnDestroy(): void {
@@ -111,5 +115,17 @@ export class App implements OnInit, OnDestroy {
       this.audio.pause();
       this.musicActive.set(false);
     }
+  }
+
+  async obtenerInvitados() {
+    const { data, error } = await this.supabase.client
+      .from('invitados')
+      .select('*');
+
+    if (error) {
+      console.error('Error al obtener invitados:', error);
+    }
+
+    console.log('Invitados obtenidos:', data);
   }
 }
