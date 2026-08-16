@@ -1,0 +1,44 @@
+.share-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(
+    150deg,
+    var(--azul-medio) 2%,
+    var(--azul-oscuro) 100%
+  );
+  color: #fff;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.7rem 1.2rem;
+  font-family: "Lora", serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition:
+    filter 0.2s,
+    transform 0.15s;
+
+  svg {
+    width: 1.1em;
+    height: 1.1em;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  &--copied {
+    background: linear-gradient(150deg, #2e7d32, #1b5e20);
+  }
+}

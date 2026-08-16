@@ -3,7 +3,9 @@
     <p class="guest-label">Esta invitación es para</p>
     <p class="guest-name font-script">{{ guestName }}</p>
     <p class="guest-spots">
-      Hemos reservado <strong>{{ spots }} cupos</strong> en su honor.
+      Hemos reservado
+      <strong>{{ spots }} {{ spots === 1 ? "cupo" : "cupos" }}</strong> en su
+      honor.
     </p>
   </div>
 </section>

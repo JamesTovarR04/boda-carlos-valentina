@@ -1,0 +1,52 @@
+.admin-page {
+  min-height: 100vh;
+  background: #f5f5f5;
+  font-family: 'Lora', serif;
+}
+
+.admin-header {
+  background: var(--azul-oscuro);
+  color: var(--blanco);
+  padding: 1.5rem 2rem;
+
+  h1 {
+    font-family: 'Imperial Script', cursive;
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: 0.25rem;
+  }
+
+  p {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    letter-spacing: 2px;
+  }
+}
+
+.admin-main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.admin-section {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+
+  h2 {
+    font-size: 1.2rem;
+    color: var(--azul-oscuro);
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e0e0e0;
+  }
+}
+
+.admin-placeholder {
+  color: #aaa;
+  font-size: 0.95rem;
+}

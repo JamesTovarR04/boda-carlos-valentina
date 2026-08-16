@@ -1,0 +1,75 @@
+<div class="app-wrapper">
+  <!-- ── UI Global ──────────────────────────────────────── -->
+  <app-intro-overlay
+    [isOpen]="overlayOpen()"
+    [isHidden]="overlayHidden()"
+    (opened)="openDoors()"
+  />
+
+  <app-music-btn
+    [active]="musicActive()"
+    [visible]="showMusicBtn()"
+    (toggled)="toggleMusic()"
+  />
+
+  <!-- Desktop: aviso solo-mobile -->
+  <div class="desktop-notice">
+    <p>
+      Esta invitación ha sido optimizada para dispositivos móviles.<br />
+      Ábrela desde tu celular o activa el modo móvil en tu navegador:<br />
+      <strong>(clic derecho → 'Inspeccionar' → Ctrl + Shift + M)</strong>
+    </p>
+    <img src="assets/images/Movil.svg" alt="Abrir en móvil" width="80" />
+  </div>
+
+  <!-- ── Contenido principal ────────────────────────────── -->
+  <main class="invitation-wrapper">
+    <!-- 01 · Foto hero -->
+    <app-hero />
+
+    <app-container-bg>
+      <!-- 02 · Nombres y mensaje -->
+      <app-names />
+
+      <!-- 03 · Padres -->
+      <app-parents />
+
+      <app-corazon />
+    </app-container-bg>
+
+    <!-- 05 · Countdown -->
+    <app-countdown />
+
+    <!-- ── Divisor + Foto ── -->
+    <app-photo-section src="assets/images/foto_4.webp" alt="Foto novios" />
+
+    <app-container-bg>
+      <app-video />
+      <!-- ── Divisor + Foto ── -->
+      <app-photo-section
+        src="assets/images/foto_1.webp"
+        alt="Foto de la pareja"
+      />
+
+      <app-share-btn />
+
+      <!-- ──  Foto ── -->
+      <app-photo-section
+        src="assets/images/foto_5.webp"
+        alt="Foto ceremonia"
+        [showFlor]="true"
+      />
+
+      <!-- Footer -->
+      <footer>
+        <p>Carlos &amp; Valentina · 10.10.2026</p>
+      </footer>
+    </app-container-bg>
+
+    <app-photo-section
+      src="assets/images/foto_3.webp"
+      alt="Foto de los novios"
+      [hideBottomDivider]="true"
+    />
+  </main>
+</div>
