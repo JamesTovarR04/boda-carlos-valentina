@@ -28,7 +28,7 @@ jobs:
         run: npm ci
 
       - name: Build Angular
-        run: npm run build -- --configuration production
+        run: npm run build -- --configuration production --base-href /boda-carlos-valentina/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
