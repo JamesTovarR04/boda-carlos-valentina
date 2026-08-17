@@ -117,7 +117,7 @@ export class AdminPage implements OnInit {
   }
 
   copyLink(inv: Invitado) {
-    const url = `${window.location.origin}/#/${inv.id}`;
+    const url = `${window.location.origin}/${inv.id}`;
     navigator.clipboard.writeText(url);
   }
 
