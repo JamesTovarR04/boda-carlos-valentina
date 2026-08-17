@@ -17,14 +17,7 @@
         Escanea este QR o haz clic en el botón para subir todas las fotos a un
         mismo álbum.
       </p>
-      <img
-        src="assets/images/QR-FALSO-300x300.jpg"
-        alt="QR álbum de fotos"
-        class="qr-img"
-        width="135"
-        height="135"
-        loading="lazy"
-      />
+      <canvas #qrCanvas class="qr-img"></canvas>
       <a [href]="urlAlbum" rel="noopener" class="btn-gold">
         <svg
           aria-hidden="true"
