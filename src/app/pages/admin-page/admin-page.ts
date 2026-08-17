@@ -1,6 +1,11 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { SupabaseService, Invitado, Visualizacion, ResumenViz } from '../../services/supabase';
+import {
+  SupabaseService,
+  Invitado,
+  Visualizacion,
+  ResumenViz,
+} from '../../services/supabase';
 
 @Component({
   selector: 'app-admin-page',
@@ -83,12 +88,17 @@ export class AdminPage implements OnInit {
     this.modalOpen.set(true);
   }
 
-  closeModal() { this.modalOpen.set(false); }
+  closeModal() {
+    this.modalOpen.set(false);
+  }
 
   async save() {
     this.saving.set(true);
     if (this.editingId) {
-      const { error } = await this.supabase.updateInvitado(this.editingId, this.form);
+      const { error } = await this.supabase.updateInvitado(
+        this.editingId,
+        this.form,
+      );
       if (error) this.error.set(error.message);
     } else {
       const { error } = await this.supabase.createInvitado(this.form);
@@ -107,7 +117,7 @@ export class AdminPage implements OnInit {
   }
 
   copyLink(inv: Invitado) {
-    const url = `${window.location.origin}/${inv.guid}`;
+    const url = `${window.location.origin}/${inv.id}`;
     navigator.clipboard.writeText(url);
   }
 
@@ -117,13 +127,17 @@ export class AdminPage implements OnInit {
     this.detalleInvitado = inv;
     this.detalleOpen.set(true);
     this.detalleLoading.set(true);
-    const { data, error } = await this.supabase.getVisualizacionesByInvitado(inv.id!);
+    const { data, error } = await this.supabase.getVisualizacionesByInvitado(
+      inv.id!,
+    );
     if (error) this.error.set(error.message);
     else this.detalleViz.set(data ?? []);
     this.detalleLoading.set(false);
   }
 
-  closeDetalle() { this.detalleOpen.set(false); }
+  closeDetalle() {
+    this.detalleOpen.set(false);
+  }
 
   formatDate(iso: string): string {
     return new Date(iso).toLocaleString('es-CO', {
@@ -139,14 +153,20 @@ export class AdminPage implements OnInit {
   }
 
   totalConfirmados() {
-    return this.invitados().filter(i => i.confirma_asistencia).length;
+    return this.invitados().filter((i) => i.confirma_asistencia).length;
   }
 
   totalVistos() {
-    return this.invitados().filter(i => this.getResumen(i.id!).vistas > 0).length;
+    return this.invitados().filter((i) => this.getResumen(i.id!).vistas > 0)
+      .length;
   }
 
   private emptyForm(): Omit<Invitado, 'id' | 'created_at'> {
-    return { nombre: '', cupos: 1, confirma_asistencia: false, guid: crypto.randomUUID() };
+    return {
+      nombre: '',
+      cupos: 1,
+      confirma_asistencia: false,
+      guid: crypto.randomUUID(),
+    };
   }
 }
