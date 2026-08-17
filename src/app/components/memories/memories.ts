@@ -11,7 +11,8 @@ import QRCode from 'qrcode';
   imports: [Card, Camara],
 })
 export class Memories implements OnInit {
-  @ViewChild('qrCanvas', { static: true }) qrCanvas!: ElementRef<HTMLCanvasElement>;
+  @ViewChild('qrCanvas', { static: true })
+  qrCanvas!: ElementRef<HTMLCanvasElement>;
 
   urlAlbum = '';
 
@@ -19,7 +20,7 @@ export class Memories implements OnInit {
 
   ngOnInit(): void {
     const guid = this.route.snapshot.paramMap.get('guid');
-    this.urlAlbum = `${window.location.origin}/album/${guid}`;
+    this.urlAlbum = `${window.location.origin}/#/album/${guid}`;
 
     QRCode.toCanvas(this.qrCanvas.nativeElement, this.urlAlbum, {
       width: 135,
