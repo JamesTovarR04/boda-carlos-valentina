@@ -7,7 +7,6 @@ import {
 } from '@angular/core';
 
 // ── Shared ────────────────────────────────────────────
-import { MountainDivider } from '../../shared/mountain-divider/mountain-divider';
 import { PhotoSection } from '../../shared/photo-section/photo-section';
 
 // ── UI ────────────────────────────────────────────────
@@ -33,6 +32,7 @@ import { Video } from '../../components/video/video';
 import { Corazon } from '../../components/animaciones/corazon';
 import { ContainerBg } from '../../shared/container-bg/container-bg';
 import { SupabaseService } from '../../services/supabase';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-invitation-page',
@@ -72,8 +72,14 @@ export class InvitationPage implements OnInit, OnDestroy {
   showMusicBtn = signal(false);
 
   private audio: HTMLAudioElement | null = null;
+  private visualizacionId: string | null = null;
 
   canciones = ['amor_bueno', 'hasta_viejitos', 'tienes_magia'];
+
+  constructor(
+    private supabase: SupabaseService,
+    private route: ActivatedRoute,
+  ) {}
 
   ngOnInit(): void {
     // Volver al inicio al recargar la página
@@ -85,6 +91,7 @@ export class InvitationPage implements OnInit, OnDestroy {
     this.audio.loop = true;
     // Bloquear scroll hasta que se abra el overlay
     document.body.style.overflow = 'hidden';
+    this.crearVisualizacion();
   }
 
   ngOnDestroy(): void {
@@ -101,6 +108,7 @@ export class InvitationPage implements OnInit, OnDestroy {
       // Restaurar scroll al terminar la animación
       document.body.style.overflow = '';
     }, 1500);
+    this.actualizarVisualizacion();
   }
 
   toggleMusic(): void {
@@ -111,6 +119,43 @@ export class InvitationPage implements OnInit, OnDestroy {
     } else {
       this.audio.pause();
       this.musicActive.set(false);
+    }
+  }
+
+  async crearVisualizacion(): Promise<void> {
+    const guid = this.route.snapshot.paramMap.get('guid');
+    if (!guid) return;
+
+    const { data: ipData } =
+      await this.supabase.client.functions.invoke('get-client-ip');
+
+    const { data, error } = await this.supabase.client
+      .from('visualizaciones')
+      .insert([
+        { invitado: guid, ip: ipData?.ip || '127.0.0.1', abrio_sobre: false },
+      ])
+      .select();
+
+    if (error) {
+      console.error('Error al actualizar visualización:', error);
+    } else {
+      console.log('Visualización actualizada:', data);
+      this.visualizacionId = data?.[0]?.id || null;
+    }
+  }
+
+  async actualizarVisualizacion(): Promise<void> {
+    if (!this.visualizacionId) return;
+
+    const { data, error } = await this.supabase.client
+      .from('visualizaciones')
+      .update({ abrio_sobre: true })
+      .eq('id', this.visualizacionId);
+
+    if (error) {
+      console.error('Error al actualizar visualización:', error);
+    } else {
+      console.log('Visualización actualizada:', data);
     }
   }
 }

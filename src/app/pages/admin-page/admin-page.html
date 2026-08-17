@@ -1,18 +1,253 @@
 <div class="admin-page">
   <header class="admin-header">
-    <h1>Panel de Administración</h1>
-    <p>Carlos &amp; Valentina · 10.10.2026</p>
+    <div>
+      <h1>Administración</h1>
+      <p>Carlos &amp; Valentina · 10.10.2026</p>
+    </div>
   </header>
 
   <main class="admin-main">
+    @if (error()) {
+      <div class="admin-error">{{ error() }}</div>
+    }
+
+    <!-- Estadísticas -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-num">{{ invitados().length }}</span>
+        <span class="stat-label">Grupos</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num">{{ totalCupos() }}</span>
+        <span class="stat-label">Cupos</span>
+      </div>
+      <div class="stat-card stat-card--viewed">
+        <span class="stat-num">{{ totalVistos() }}</span>
+        <span class="stat-label">Vistos</span>
+      </div>
+      <div class="stat-card stat-card--confirm">
+        <span class="stat-num">{{ totalConfirmados() }}</span>
+        <span class="stat-label">Confirmados</span>
+      </div>
+    </div>
+
+    <!-- Tabla -->
     <section class="admin-section">
       <h2>Invitados</h2>
-      <p class="admin-placeholder">Gestión de invitados — próximamente</p>
-    </section>
 
-    <section class="admin-section">
-      <h2>Álbum de Fotos</h2>
-      <p class="admin-placeholder">Gestión del álbum — próximamente</p>
+      <button class="btn btn--primary" (click)="openCreate()">
+        + Nuevo invitado
+      </button>
+
+      @if (loading()) {
+        <p class="admin-placeholder">Cargando...</p>
+      } @else if (invitados().length === 0) {
+        <p class="admin-placeholder">No hay invitados aún.</p>
+      } @else {
+        <div class="table-wrap">
+          <table class="inv-table">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Cupos</th>
+                <th>Confirma</th>
+                <th>Vistas</th>
+                <th>Abrió sobre</th>
+                <th>Enlace</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (inv of invitados(); track inv.id) {
+                <tr>
+                  <td>{{ inv.nombre }}</td>
+                  <td class="td-center">{{ inv.cupos }}</td>
+                  <td class="td-center">
+                    <span
+                      class="badge"
+                      [class.badge--yes]="inv.confirma_asistencia"
+                      [class.badge--no]="!inv.confirma_asistencia"
+                    >
+                      {{ inv.confirma_asistencia ? "Sí" : "No" }}
+                    </span>
+                  </td>
+                  <td class="td-center">
+                    <span
+                      class="badge"
+                      [class.badge--yes]="getResumen(inv.id!).vistas > 0"
+                      [class.badge--neutral]="getResumen(inv.id!).vistas === 0"
+                    >
+                      {{ getResumen(inv.id!).vistas }}
+                    </span>
+                  </td>
+                  <td class="td-center">
+                    <span
+                      class="badge"
+                      [class.badge--yes]="getResumen(inv.id!).abrioSobre"
+                      [class.badge--no]="!getResumen(inv.id!).abrioSobre"
+                    >
+                      {{ getResumen(inv.id!).abrioSobre ? "Sí" : "No" }}
+                    </span>
+                  </td>
+                  <td class="td-center">
+                    <button
+                      class="btn-icon"
+                      title="Copiar enlace"
+                      (click)="copyLink(inv)"
+                    >
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <rect x="9" y="9" width="13" height="13" rx="2" />
+                        <path
+                          d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                        />
+                      </svg>
+                    </button>
+                  </td>
+                  <td class="td-actions">
+                    <button
+                      class="btn btn--sm btn--info"
+                      (click)="openDetalle(inv)"
+                    >
+                      Detalles
+                    </button>
+                    <button
+                      class="btn btn--sm btn--outline"
+                      (click)="openEdit(inv)"
+                    >
+                      Editar
+                    </button>
+                    <button
+                      class="btn btn--sm btn--danger"
+                      (click)="delete(inv)"
+                    >
+                      Eliminar
+                    </button>
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      }
     </section>
   </main>
 </div>
+
+<!-- Modal editar / crear -->
+@if (modalOpen()) {
+  <div class="modal-backdrop" (click)="closeModal()">
+    <div class="modal" (click)="$event.stopPropagation()">
+      <h3 class="modal-title">
+        {{ editingId ? "Editar invitado" : "Nuevo invitado" }}
+      </h3>
+
+      <label class="modal-label">
+        Nombre
+        <input
+          class="modal-input"
+          type="text"
+          [(ngModel)]="form.nombre"
+          placeholder="Familia García..."
+        />
+      </label>
+
+      <label class="modal-label">
+        Cupos
+        <input
+          class="modal-input"
+          type="number"
+          [(ngModel)]="form.cupos"
+          min="1"
+          max="20"
+        />
+      </label>
+
+      <label class="modal-label modal-label--check">
+        <input type="checkbox" [(ngModel)]="form.confirma_asistencia" />
+        Confirmó asistencia
+      </label>
+
+      <div class="modal-actions">
+        <button class="btn btn--outline" (click)="closeModal()">
+          Cancelar
+        </button>
+        <button class="btn btn--primary" (click)="save()" [disabled]="saving()">
+          {{ saving() ? "Guardando..." : "Guardar" }}
+        </button>
+      </div>
+    </div>
+  </div>
+}
+
+<!-- Modal detalles visualizaciones -->
+@if (detalleOpen()) {
+  <div class="modal-backdrop" (click)="closeDetalle()">
+    <div class="modal modal--wide" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <h3 class="modal-title">Visualizaciones</h3>
+        <button class="btn-icon" (click)="closeDetalle()">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+      <p class="modal-subtitle">{{ detalleInvitado?.nombre }}</p>
+
+      @if (detalleLoading()) {
+        <p class="admin-placeholder">Cargando...</p>
+      } @else if (detalleViz().length === 0) {
+        <p class="admin-placeholder">
+          Este invitado aún no ha visto la invitación.
+        </p>
+      } @else {
+        <div class="table-wrap">
+          <table class="inv-table">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Abrió sobre</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (v of detalleViz(); track v.id) {
+                <tr>
+                  <td>{{ formatDate(v.created_at) }}</td>
+                  <td class="td-center">
+                    <span
+                      class="badge"
+                      [class.badge--yes]="v.abrio_sobre"
+                      [class.badge--no]="!v.abrio_sobre"
+                    >
+                      {{ v.abrio_sobre ? "Sí" : "No" }}
+                    </span>
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      }
+
+      <div class="modal-actions">
+        <button class="btn btn--outline" (click)="closeDetalle()">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+}

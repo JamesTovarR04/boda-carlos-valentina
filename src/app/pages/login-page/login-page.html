@@ -1,0 +1,22 @@
+<div class="login-page">
+  <div class="login-card">
+    <h1 class="login-title">Admin</h1>
+    <p class="login-subtitle">Carlos &amp; Valentina</p>
+
+    <form (ngSubmit)="submit()" class="login-form">
+      <input
+        type="password"
+        [(ngModel)]="password"
+        name="password"
+        placeholder="Contraseña"
+        class="login-input"
+        [class.login-input--error]="error()"
+        autocomplete="current-password"
+      />
+      @if (error()) {
+        <p class="login-error">Contraseña incorrecta</p>
+      }
+      <button type="submit" class="login-btn">Ingresar</button>
+    </form>
+  </div>
+</div>
