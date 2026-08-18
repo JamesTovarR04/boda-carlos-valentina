@@ -82,7 +82,8 @@ export class AdminPage implements OnInit {
     this.form = {
       nombre: inv.nombre,
       cupos: inv.cupos,
-      confirma_asistencia: inv.confirma_asistencia,
+      confirma_asistencia_novia: inv.confirma_asistencia_novia,
+      confirma_asistencia_novio: inv.confirma_asistencia_novio,
       guid: inv.guid,
     };
     this.modalOpen.set(true);
@@ -153,7 +154,9 @@ export class AdminPage implements OnInit {
   }
 
   totalConfirmados() {
-    return this.invitados().filter((i) => i.confirma_asistencia).length;
+    return this.invitados().filter(
+      (i) => i.confirma_asistencia_novia || i.confirma_asistencia_novio
+    ).length;
   }
 
   totalVistos() {
@@ -165,7 +168,8 @@ export class AdminPage implements OnInit {
     return {
       nombre: '',
       cupos: 1,
-      confirma_asistencia: false,
+      confirma_asistencia_novia: false,
+      confirma_asistencia_novio: false,
       guid: crypto.randomUUID(),
     };
   }

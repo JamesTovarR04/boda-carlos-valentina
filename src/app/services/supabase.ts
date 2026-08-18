@@ -7,7 +7,8 @@ export interface Invitado {
   created_at?: string;
   nombre: string;
   cupos: number;
-  confirma_asistencia: boolean;
+  confirma_asistencia_novia: boolean;
+  confirma_asistencia_novio: boolean;
   guid?: string;
 }
 

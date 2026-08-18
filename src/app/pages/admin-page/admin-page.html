@@ -50,7 +50,8 @@
               <tr>
                 <th>Nombre</th>
                 <th>Cupos</th>
-                <th>Confirma</th>
+                <th>Confirma Novia</th>
+                <th>Confirma Novio</th>
                 <th>Vistas</th>
                 <th>Abrió sobre</th>
                 <th>Enlace</th>
@@ -65,10 +66,19 @@
                   <td class="td-center">
                     <span
                       class="badge"
-                      [class.badge--yes]="inv.confirma_asistencia"
-                      [class.badge--no]="!inv.confirma_asistencia"
+                      [class.badge--yes]="inv.confirma_asistencia_novia"
+                      [class.badge--no]="!inv.confirma_asistencia_novia"
                     >
-                      {{ inv.confirma_asistencia ? "Sí" : "No" }}
+                      {{ inv.confirma_asistencia_novia ? "Sí" : "No" }}
+                    </span>
+                  </td>
+                  <td class="td-center">
+                    <span
+                      class="badge"
+                      [class.badge--yes]="inv.confirma_asistencia_novio"
+                      [class.badge--no]="!inv.confirma_asistencia_novio"
+                    >
+                      {{ inv.confirma_asistencia_novio ? "Sí" : "No" }}
                     </span>
                   </td>
                   <td class="td-center">
@@ -170,8 +180,13 @@
       </label>
 
       <label class="modal-label modal-label--check">
-        <input type="checkbox" [(ngModel)]="form.confirma_asistencia" />
-        Confirmó asistencia
+        <input type="checkbox" [(ngModel)]="form.confirma_asistencia_novia" />
+        Confirmó asistencia a la Novia
+      </label>
+
+      <label class="modal-label modal-label--check">
+        <input type="checkbox" [(ngModel)]="form.confirma_asistencia_novio" />
+        Confirmó asistencia al Novio
       </label>
 
       <div class="modal-actions">
