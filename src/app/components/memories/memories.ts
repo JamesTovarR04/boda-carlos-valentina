@@ -20,7 +20,7 @@ export class Memories implements OnInit {
 
   ngOnInit(): void {
     const guid = this.route.snapshot.paramMap.get('guid');
-    this.urlAlbum = `${window.location.origin}/album/${guid}`;
+    this.urlAlbum = `${window.location.origin}/#/album/${guid}`;
 
     QRCode.toCanvas(this.qrCanvas.nativeElement, this.urlAlbum, {
       width: 135,
